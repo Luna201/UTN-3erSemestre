@@ -1,5 +1,4 @@
 package mundoPc;
-
 import ar.com.system2023.mundopc.*;     //*para importar todo
 
 public class mundoPC {

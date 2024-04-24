@@ -11,7 +11,6 @@ public class TestArgumentosVariables {
         imprimirNumeros(numeros);
     }
     
-    
     private static void imprimirNumeros(int ...numeros){    //los 3 puntos son para argumentos variables, son indefinidos
         for (int i = 0; i < numeros.length; i++){//leigth es el arreglo
             System.out.println("Elementos: "+numeros[i]);
