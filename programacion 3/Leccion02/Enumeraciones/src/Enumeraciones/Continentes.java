@@ -11,6 +11,7 @@ public enum Continentes {
     
     Continentes(int paises, String habitantes){
         this.paises = paises;
+        this.habitantes = habitantes;
     }
     // Método Get
     public int getPaises(){
