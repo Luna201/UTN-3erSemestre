@@ -38,7 +38,7 @@ def ir_chat():
     global entry_pregunta1
     entry_pregunta1 = tk.Entry(ventana, font=("Verdana", 12))
     entry_pregunta1.pack(pady=10)
-    entry_pregunta1.place(x=20, y=15)
+    entry_pregunta1.place(x=30, y=35)
 
     # Botón para enviar las preguntas
     btn_enviar = CTkButton(ventana, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
