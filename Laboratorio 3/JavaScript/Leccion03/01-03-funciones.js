@@ -44,11 +44,10 @@ const sumarFuncionFlecha= (a, b) => a + b;
 resultado= sumarFuncionFlecha(3, 7);        //Asignamos el valor a una variable
 console.log(resultado)
 
-
-//PARAMETROS: Lista de variables que definimos en una función
-//ARGUMENTOS: valores que pasamos cuando llamamos una funcion
-// FUNCIÓN: puede definirse tambien como un objeto, con una propiedad de argumento (arreglo) y toString
 /*
+PARAMETROS: Lista de variables que definimos en una función
+ARGUMENTOS: valores que pasamos cuando llamamos una funcion
+FUNCIÓN: puede definirse tambien como un objeto, con una propiedad de argumento (arreglo) y toString
 NO es necesario qque coincida el nro de argumentos con el nro de parametros
 
 let sumar = function(a= 4, b= 8){
@@ -70,3 +69,44 @@ let sumar = function(a= 4, b= 8){
 }
 resultado= sumar(3, 2, 9);
 console.log(resultado);
+
+/*-En js cuando no se usa el tipo Flecha se puede usar Hosting
+- Arguments es para arreglos
+
+-Sumar todos los argumentos
+*/
+let respuesta= sumaTodo(5, 4, 13, 10, 9);
+console.log(respuesta);
+function sumaTodo(){
+    let suma= 0;
+    for(let i= 0; i < arguments.length; i++){
+        suma += arguments[i]; 
+    }
+    return suma;
+}
+
+// Tipos primitivos
+let k = 10;     //variable global, esta fuera de la estructura
+function cambiarValor(a){//     Paso por valor, la variable (k) no sufre ningun cambio, solo pasa una copia
+    a = 20;     
+}
+cambiarValor(k);
+console.log(k);
+
+
+//Paso por referencia
+//Se tiene que crear un OBJETO, porque a un objeto se pueden agrgar propiedades. La buena practica al crear un objeto es agregarla
+//como const
+
+const persona= {    //atributos ->
+    nombre: "Juan",
+    apellido: "Lepez"
+}
+console.log(persona);
+
+function cambiarValorObjeto(p1){
+    p1.nombre= "Ignacio";
+    p1.apellido= "Perez";
+}
+cambiarValorObjeto(persona);
+console.log(persona);
