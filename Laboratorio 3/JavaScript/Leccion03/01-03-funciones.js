@@ -36,3 +36,10 @@ miFuncionDos(5, 7, 3, 6);
 //To String
 var miFuncionTexto= miFuncionDos.toString();
 console.log(miFuncionTexto);
+
+//Funciones flecha
+// Con let podemos cambiar el valor de la referencia, no con const. No de usa la palabra FUNCTION ni las llaves, solo el simbolo
+//de flecha => "operador de flecha". Define el cuerpo de la funcion. NO usa return
+const sumarFuncionFlecha= (a, b) => a + b;
+resultado= sumarFuncionFlecha(3, 7);        //Asignamos el valor a una variable
+console.log(resultado)
