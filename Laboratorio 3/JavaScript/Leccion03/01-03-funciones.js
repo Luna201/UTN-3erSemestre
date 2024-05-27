@@ -43,3 +43,30 @@ console.log(miFuncionTexto);
 const sumarFuncionFlecha= (a, b) => a + b;
 resultado= sumarFuncionFlecha(3, 7);        //Asignamos el valor a una variable
 console.log(resultado)
+
+
+//PARAMETROS: Lista de variables que definimos en una función
+//ARGUMENTOS: valores que pasamos cuando llamamos una funcion
+// FUNCIÓN: puede definirse tambien como un objeto, con una propiedad de argumento (arreglo) y toString
+/*
+NO es necesario qque coincida el nro de argumentos con el nro de parametros
+
+let sumar = function(a= 4, b= 8){
+    console.log(arguments[0]);      //muestra el parametro de a
+    console.log(arguments[1]);      //muestra el parametro de b
+    console.log(arguments[2]);      //muestra nuevo parametro 
+    return a + b;
+}
+resultado= sumar(3, 2, 9);
+console.log(resultado);
+*/
+
+//agrega un nuevo argumento
+
+let sumar = function(a= 4, b= 8){
+    console.log(arguments[0]);      //muestra el parametro de a
+    console.log(arguments[1]);      //muestra el parametro de b
+    return a + b + arguments[2];      //muestra nuevo parametro
+}
+resultado= sumar(3, 2, 9);
+console.log(resultado);
