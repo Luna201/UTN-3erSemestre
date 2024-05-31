@@ -1,0 +1,5 @@
+GUIA PYTHON
+
+# Excepciones
+    -Leccion01
+        .manejo-excepciones: Manejo de errores y excepciones, procesamiento de excepciones
