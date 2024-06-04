@@ -2,4 +2,7 @@ GUIA PYTHON
 
 # Excepciones
     -Leccion01
-        .manejo-excepciones: Manejo de errores y excepciones, procesamiento de excepciones
+        .manejo-excepciones: Manejo de errores y excepciones, procesamiento de excepciones, Procesamiento de excepciones, Procesar clases de exception más específicas,
+Bloques else y finally al manejar excepciones y Creación de clases de Exception personalizadas
+
+# Leccion09
