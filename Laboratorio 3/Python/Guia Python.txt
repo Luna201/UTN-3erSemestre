@@ -6,3 +6,7 @@ GUIA PYTHON
 Bloques else y finally al manejar excepciones y Creación de clases de Exception personalizadas
 
 # Leccion09
+
+#Archivos
+    -Leccion02
+        .manejo de archivos
