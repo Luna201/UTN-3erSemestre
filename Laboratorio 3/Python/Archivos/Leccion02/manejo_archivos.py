@@ -6,6 +6,7 @@ try:
     archivo.write('Como por ejempo: acción, ejecución y producción\n')
     archivo.write('Las letras son:\nr read,\na append anexa,\nw write escribe,\nx crea un archivo')
     archivo.write('\nt es para texto o text,\nb para archivos binarios (image, video),\nw+ o r+ para escribir y leer\n ')
+    archivo.write("Saludos a todos los alumnos de la tecnicatura")
     archivo.write('Con esto terminamos')
 except Exception as e:
     print(e)
