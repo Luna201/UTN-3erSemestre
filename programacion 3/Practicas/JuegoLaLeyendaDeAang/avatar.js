@@ -76,6 +76,30 @@ function ataqueAleatorioEnemigo(){//Ahora ocupando la variable global nueva le d
     } else {
         ataqueEnemigo = 'Barrida'
     }
+    combate()
+}
+
+function crearMensaje(resultado){
+    let sectionMensaje= document.getElementById('mensajes')
+    let parrafo = document.createElement('p')
+
+    parrafo.innerHTML= 'Tu personaje atacó con '+ ataqueJugador+',el personaje del enemigo atacó con '+ataqueEnemigo+'. '+resultado
+
+    sectionMensaje.appendChild(parrafo)
+}
+
+function combate(){
+    if(ataqueEnemigo == ataqueJugador){
+        crearMensaje('EMPATE')
+    }else if (ataqueJugador == 'Punio' && ataqueEnemigo == 'Barrida'){
+        crearMensaje(GANASTE)
+    }else if (ataqueJugador == 'Patada' && ataqueEnemigo == 'Punio'){
+        crearMensaje(GANASTE)
+    }else if (ataqueJugador == 'Barrida' && ataqueEnemigo == 'Patada'){
+        crearMensaje(GANASTE)
+    }else {
+        crearMensaje ("PERDIDSTE")
+    }
 }
 
 
