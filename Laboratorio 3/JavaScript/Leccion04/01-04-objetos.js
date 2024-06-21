@@ -7,11 +7,22 @@ let persona= {  //propiedades del objeto
     nombre: "Carlos",
     apellido: "Gil",
     email: "cgil@gmail.com",
-    edad: 30,
+    edad: 28,
+    idioma: 'es',
+    get lang(){
+        return this.idioma.toUpperCase();      //toUpperCase= convierte todos los caracteres alfabéticos en mayúsculas
+    },
+    set lang(lang){
+        this.idioma= lang.toUpperCase();
+    },
 
     nombreCompleto: function(){     //método o función de Js; como propiedad
         return this.nombre+" "+this.apellido;       //this apunta a un objeto
+    },
+    get nombreEdad(){       //Método get
+        return 'El nombre es: '+this.nombre+', edad:'+this.edad;
     }
+    
 }
 console.log(persona.nombre)
 console.log(persona.apellido)
@@ -64,3 +75,26 @@ console.log(personaArray);
 console.log('Distintas formas de imprimir un objeto. Forma 4')
 let personaString= JSON.stringify(persona);
 console.log(personaString);
+
+//GET= OBTENER
+console.log('Comenzamos a utilizar l método get');
+console.log(persona.nombreEdad);
+
+//SET= ESTABLECER/MODIFICAR
+console.log('Comenzamos con el método get y set para idiomas');
+persona.lang= 'en'
+console.log(persona.lang);
+
+
+function Persona3(nombre= 'Luis', apellido, email){     //funcion constructor. Preasignado el nombre(se cambia en este caso)
+    this.nombre= nombre;
+    this.apellido= apellido;
+    this.email= email;
+}
+let padre= new Persona3('Leo', 'Lopez', 'lopez@gmail.com');     //crea un nuevo objeto
+padre.nombre= "Luis"        //es posible modificar
+console.log(padre);
+
+let madre= new Persona3('Laura', 'Contrera', 'contrera@gmail.com');
+console.log(madre)
+
