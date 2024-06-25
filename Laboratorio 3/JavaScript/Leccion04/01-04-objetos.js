@@ -168,7 +168,7 @@ let persona5 ={
 console.log(persona4.nombreCompleto2('Lic.', '9245387690'));
 console.log(persona4.nombreCompleto2.call(persona5, ' Ing.', '4237865934'));
 
-
+ 
 //Método APPLY: Lee el arreglo y lo asigna como argumentos. a diferencia de call se debe crear un arreglo
 let arreglo = ['Ing.', '984235989']
 console.log(persona4.nombreCompleto2.apply(persona5, arreglo)); 
