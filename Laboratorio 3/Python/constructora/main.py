@@ -4,7 +4,7 @@ def ir_main():
     while True:
         try:
             opcion = int(input("""
-++   Bienvenido a Constructora Byte-Busters   ++
+        ++   Bienvenido a Constructora Byte-Busters   ++
 Seleccione el tamaño de la construcción:
 (1) - 1
 (2) - 2

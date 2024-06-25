@@ -23,8 +23,10 @@ Seleccione el tamaño de la construcción:
                         lineaElegida = "Standar"
                         costo = 45 * 299000
                     elif linea == 2:
+                        lineaElegida = "Premium"
                         costo = 45 * 348000
                     elif linea == 3:
+                        lineaElegida = "Country"
                         costo = 45 * 420000
                     elif linea == 4:
                         ir_cotizacion()
@@ -40,8 +42,10 @@ Seleccione el tamaño de la construcción:
                         lineaElegida = "Standar"
                         costo = 60 * 299000
                     elif linea == 2:
+                        lineaElegida = "Premium"
                         costo = 60 * 348000
                     elif linea == 3:
+                        lineaElegida = "Country"
                         costo = 60 * 420000
                     elif linea == 4:
                         ir_cotizacion()
@@ -57,8 +61,10 @@ Seleccione el tamaño de la construcción:
                         lineaElegida = "Standar"
                         costo = 75 * 299000
                     elif linea == 2:
+                        lineaElegida = "Premium"
                         costo = 75 * 348000
                     elif linea == 3:
+                        lineaElegida = "Country"
                         costo = 75 * 420000
                     elif linea == 4:
                         ir_cotizacion()
@@ -85,8 +91,10 @@ Seleccione el tamaño de la construcción:
                         lineaElegida = "Standar"
                         costo = 70 * 299000
                     elif linea == 2:
+                        lineaElegida = "Premium"
                         costo = 70 * 348000
                     elif linea == 3:
+                        lineaElegida = "Country"
                         costo = 70 * 420000
                     elif linea == 4:
                         ir_cotizacion()
@@ -102,8 +110,10 @@ Seleccione el tamaño de la construcción:
                         lineaElegida = "Standar"
                         costo = 90 * 299000
                     elif linea == 2:
+                        lineaElegida = "Premium"
                         costo = 90 * 348000
                     elif linea == 3:
+                        lineaElegida = "Country"
                         costo = 90 * 420000
                     elif linea == 4:
                         ir_cotizacion()
@@ -119,8 +129,10 @@ Seleccione el tamaño de la construcción:
                         lineaElegida = "Standar"
                         costo = 105 * 299000
                     elif linea == 2:
+                        lineaElegida = "Premium"
                         costo = 105 * 348000
                     elif linea == 3:
+                        lineaElegida = "Country"
                         costo = 105 * 420000
                     elif linea == 4:
                         ir_cotizacion()
@@ -147,8 +159,10 @@ Seleccione el tamaño de la construcción:
                         lineaElegida = "Standar"
                         costo = 80 * 299000
                     elif linea == 2:
+                        lineaElegida = "Premium"
                         costo = 80 * 348000
                     elif linea == 3:
+                        lineaElegida = "Country"
                         costo = 80 * 420000
                     elif linea == 4:
                         ir_cotizacion()
@@ -164,8 +178,10 @@ Seleccione el tamaño de la construcción:
                         lineaElegida = "Standar"
                         costo = 100 * 299000
                     elif linea == 2:
+                        lineaElegida = "Premium"
                         costo = 100 * 348000
                     elif linea == 3:
+                        lineaElegida = "Country"
                         costo = 100 * 420000
                     elif linea == 4:
                         ir_cotizacion()
@@ -178,10 +194,13 @@ Seleccione el tamaño de la construcción:
                 __ Seleccione la línea que desea: __
  (1) Standar ($ 299.000 el m2)\n (2) Premium ($ 348.000 el m2)\n (3) Country ($ 420.000 el m2)\n (4) Volver a Cotización\n """))
                     if linea == 1:
+                        lineaElegida = "Standar"
                         costo = 120 * 299000
                     elif linea == 2:
+                        lineaElegida = "Premium"
                         costo = 120 * 348000
                     elif linea == 3:
+                        lineaElegida = "Country"
                         costo = 120 * 420000
                     elif linea == 4:
                         ir_cotizacion()
@@ -219,7 +238,7 @@ Seleccione el tamaño de la construcción:
             restoApagar = costo - adelanto
             print(f'$ {restoApagar}')
 
-            while True:     #SELECCIÓN DE CUOTAS A PAGAR
+            while True:  # SELECCIÓN DE CUOTAS A PAGAR
                 tiempoPago = int(input("""
                 --¿En cuantas cuotas desea pagar?: --
  (1) 12 cuotas (0% interes)\n (2) 24 cuotas (interes: 50%)\n (3) 36 cuotas (interes: 75%)\n (4)Volver a Cotización\n """))
@@ -228,7 +247,7 @@ Seleccione el tamaño de la construcción:
                     cuotas = pagoFinal / 12
                     break
                 elif tiempoPago == 2:
-                    pagoFinal = (restoApagar * 150) /100
+                    pagoFinal = (restoApagar * 150) / 100
                     cuotas = pagoFinal / 24
                     break
                 elif tiempoPago == 3:
@@ -240,12 +259,25 @@ Seleccione el tamaño de la construcción:
                 else:
                     print("Elige una opción válida.")
 
-            print(f"""
-        --ELECCIONES REALIZADAS:
- # TAMAÑO DE CONSTRUCCIÓN: {tamanioElegido}\n # DIMENSIÓN EN m2: {m2Elegido}\n # LINEA DE CONSTRUCCIÓN: {linea}\n # IMPORTE BRUTO: ${costo}
+                        #PRINT PARA VER LAS OPCIONES ELEGIDAS
+            print(f"""      
+                --ELECCIONES REALIZADAS:
+ # TAMAÑO DE CONSTRUCCIÓN: {tamanioElegido}\n # DIMENSIÓN EN m2: {m2Elegido}\n # LINEA DE CONSTRUCCIÓN: {lineaElegida}\n # IMPORTE BRUTO: ${costo}
  # ADELANTO ENTREGADO: $ {adelanto}\n # COSTO TOTAL FINAL: ${pagoFinal}, EN CUOTAS DE: ${cuotas} MENSUALES""")
 
-        except ValueError:
+            while True:     #CICLO PARA CONTINUAR O SALIR DE COTIZACIONES
+                fin = int(input("""
+                __ ¿Desea cotizar nuevamente?: __
+ (1) Continuar\n (2) Salir a Menú principal\n """))
+                if fin == 1:
+                    break
+                elif fin == 2:
+                    main.ir_main()
+                else:
+                    print("Elige una opción válida.")
+
+        except ValueError:                      #Excepcion de valor
             print("Error: Debes ingresar un número válido.")
-        except Exception as e:
+
+        except Exception as e:                  #Excepcion general
             print(f"Ocurrió un error inesperado: {e}")
