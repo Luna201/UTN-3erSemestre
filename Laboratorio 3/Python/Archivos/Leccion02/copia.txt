@@ -9,4 +9,26 @@ x crea un archivo
 t es para texto o text,
 b para archivos binarios (image, video),
 w+ o r+ para escribir y leer
+ Saludos a todos los alumnos de la tecnicaturaCon esto terminamosProgramamos con diferentes tipos de archivos, ahora en txt.
+Los acentos son importantes para las palabras
+Como por ejempo: acción, ejecución y producción
+Las letras son:
+r read,
+a append anexa,
+w write escribe,
+x crea un archivo
+t es para texto o text,
+b para archivos binarios (image, video),
+w+ o r+ para escribir y leer
+ Saludos a todos los alumnos de la tecnicaturaCon esto terminamosProgramamos con diferentes tipos de archivos, ahora en txt.
+Los acentos son importantes para las palabras
+Como por ejempo: acción, ejecución y producción
+Las letras son:
+r read,
+a append anexa,
+w write escribe,
+x crea un archivo
+t es para texto o text,
+b para archivos binarios (image, video),
+w+ o r+ para escribir y leer
  Saludos a todos los alumnos de la tecnicaturaCon esto terminamos
