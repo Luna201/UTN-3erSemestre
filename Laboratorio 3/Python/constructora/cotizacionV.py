@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 
+from main import ir_main
+
 # Inicialización de variables globales
 step = 1
 tamanio = 0
@@ -16,11 +18,13 @@ def ir_cotizacion():
     global step, tamanio, m2, costo, linea, adelanto, restoApagar, pagoFinal, cuotas
 
     def show_step():
+        # Ocultar widgets de adelanto si están visibles
         adelanto_input.pack_forget()
         adelanto_button.pack_forget()
         entry.pack()
         label.pack()
 
+        # Mostrar el mensaje correspondiente a cada paso
         if step == 1:
             text.set("""
             __ Bienvenido a la sección de Cotización __
@@ -78,7 +82,10 @@ Seleccione el tamaño de la construcción:
                     raise ValueError
                 if linea == 4:
                     step = 2
+                    show_step()
+                    return
 
+                # Calcular el costo basado en el tamaño y la línea seleccionada
                 if tamanio == 1:
                     if m2 == 1:
                         costo = 45 * (299000 if linea == 1 else 348000 if linea == 2 else 420000)
@@ -144,14 +151,14 @@ Seleccione el tamaño de la construcción:
                 --ELECCIONES REALIZADAS:
  # TAMAÑO DE CONSTRUCCIÓN: {tamanio}\n # DIMENSIÓN EN m2: {m2}\n # LINEA DE CONSTRUCCIÓN: {linea}\n # IMPORTE BRUTO: ${costo}
  # ADELANTO ENTREGADO: $ {adelanto}\n # COSTO TOTAL FINAL: ${pagoFinal}, EN CUOTAS DE: ${cuotas} MENSUALES""")
-                step += 1  # Pasar al siguiente paso para preguntar qué hacer después
 
             elif step == 6:
                 siguiente_paso = int(entry.get())
                 if siguiente_paso == 1:
-                    step = 1  # Reiniciar para nueva cotización
-                elif siguiente_paso == 2:
                     reiniciar()
+                    return
+                elif siguiente_paso == 2:
+                    ir_main()
                     return
 
             step += 1
@@ -185,8 +192,16 @@ Seleccione el tamaño de la construcción:
             reiniciar()
 
     def reiniciar():
-        global step
+        global step, tamanio, m2, costo, linea, adelanto, restoApagar, pagoFinal, cuotas
         step = 1
+        tamanio = 0
+        m2 = 0
+        costo = 0
+        linea = 0
+        adelanto = 0
+        restoApagar = 0
+        pagoFinal = 0
+        cuotas = 0
         show_step()
         entry.delete(0, tk.END)
 
@@ -205,6 +220,19 @@ Seleccione el tamaño de la construcción:
     frame = tk.Frame(root)
     frame.pack(pady=20)
 
+    #tamaño Ventana
+    ancho_ventana = 900
+    alto_ventana = 300
+
+    x_ventana = root.winfo_screenwidth() // 2 - ancho_ventana // 2
+    y_ventana = root.winfo_screenheight() // 2 - alto_ventana // 2
+
+    posicion = str(ancho_ventana) + "x" + str(alto_ventana) + "+" + str(x_ventana) + "+" + str(y_ventana)
+    root.geometry(posicion)
+
+    root.resizable(0, 0)
+
+    #Botones
     btn_accept = tk.Button(frame, text="Aceptar", command=next_step)
     btn_accept.pack(side=tk.LEFT, padx=5)
 
@@ -219,4 +247,3 @@ Seleccione el tamaño de la construcción:
     # Iniciar el bucle principal de la interfaz gráfica
     root.mainloop()
 
-ir_cotizacion()

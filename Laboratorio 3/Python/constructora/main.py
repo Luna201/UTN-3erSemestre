@@ -1,6 +1,4 @@
-import cotizacion
 import cotizacionV
-
 
 def ir_main():
     while True:
@@ -30,6 +28,9 @@ Seleccione el tamaño de la construcción:
             print("Error: Debes ingresar un número válido.")
         except Exception as e:
             print(f"Ocurrió un error inesperado: {e}")
+
+if __name__ == "__main__":
+    ir_main()
 
 
 

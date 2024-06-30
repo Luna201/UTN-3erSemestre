@@ -1,7 +1,7 @@
 import tkinter
 import tkinter as tk
 from customtkinter import CTkButton, CTkLabel, CTkFrame
-import chatbot,  nosotros, mod_conceptos, mod_excesos
+import chatbot,  nosotros
 
 c_negro = "#010101"
 c_morado = "#7f5af0"
@@ -17,13 +17,6 @@ def ir_usuario():
 def ir_balance():
     ventana.withdraw()
     chatbot.ir_chatbot()
-def ir_conceptos():
-    ventana.withdraw()
-    mod_conceptos.ir_conceptos()
-
-def ir_excesos():
-    ventana.withdraw()
-    mod_excesos.ir_excesos()
 
 def ir_menu():
     global ventana
@@ -51,20 +44,6 @@ def ir_menu():
                      command=chatbot.ir_chatbot)
     btn2.pack()
     btn2.place(relx=0.25, rely=0.3, relwidth=0.12, relheight=0.05)
-
-
-    btn5 = CTkButton(ventana, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
-                     hover_color=c_morado, corner_radius=12, border_width=2, text="3",
-                     height=40,
-                     command=ir_conceptos)
-    btn5.pack()
-    btn5.place(relx=0.62, rely=0.2, relwidth=0.12, relheight=0.05)
-
-    btn6 = CTkButton(ventana, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
-                     hover_color=c_morado, corner_radius=12, border_width=2, text="4", height=40,
-                     command=ir_excesos)
-    btn6.pack()
-    btn6.place(relx=0.62, rely=0.3, relwidth=0.12, relheight=0.05)
 
 
     btn9 = CTkButton(ventana, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
