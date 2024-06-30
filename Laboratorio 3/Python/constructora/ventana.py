@@ -1,5 +1,31 @@
+import tkinter
+from tkinter import *
+import tkinter as tk
 import main
+from customtkinter import CTkButton
 
+c_negro = "#010101"
+c_morado = "#7f5af0"
+c_verde = "#2cb67d"
+c_azul = "#33DDFF"
+c_azulOscuro = "#2980B9"
+c_blanco = "#FFFFFF"
+c_azulClaro = "#86A9FD"
+
+global ventana
+ventana = tkinter.Tk()
+ancho_pantalla = ventana.winfo_screenwidth()
+altura_pantalla = ventana.winfo_screenheight()
+ancho_ventana = int(ancho_pantalla)
+altura_ventana = int(altura_pantalla)
+ventana.geometry(f"{ancho_ventana}x{altura_ventana}")
+ventana.config()
+ventana.title("Sistema de control de facturas")
+
+label_inicio = tk.Label(ventana, text="---   Cotización   ---", bd=2, fg="black", font=("Verdana", 18))
+label_inicio.pack(pady=20)
+
+#
 def ir_cotizacion():
     global tamanio, m2, costo
 
@@ -282,3 +308,23 @@ Seleccione el tamaño de la construcción:
         except Exception as e:  # Excepcion general
             print(f"Ocurrió un error inesperado: {e}")
 
+
+
+#entrada
+opciones=Entry(ventana)
+opciones.pack()
+opciones.place(relx=0.25, rely=0.7, relwidth=0.49, relheight=0.05)
+
+# Crear botones
+btn1 = CTkButton(ventana, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
+                 hover_color=c_morado, corner_radius=12, border_width=2, text="Aceptar", height=40,
+                 )
+btn1.pack()
+btn1.place(relx=0.25, rely=0.8, relwidth=0.12, relheight=0.05)
+
+btn2 = CTkButton(ventana, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
+                 hover_color=c_morado, corner_radius=12, border_width=2, text="Regresar a Menú", height=40,
+                 )
+btn2.pack()
+btn2.place(relx=0.62, rely=0.8, relwidth=0.12, relheight=0.05)
+ventana.mainloop()

@@ -45,13 +45,18 @@ def ir_chat():
 
             elif opcion == 2:
                 b = int(input("""
-            ---     ¿ Que fecha quiere consultar?     ---
-            (1) Fecha 1: Argentina vs Canada / Peru vs Chile / México vs Jamaica / Ecuador vs Venezuela
-            (2) Fecha 2: 
-            (3) 
-            (4) 
-            (5) Ir a MENÚ
-            (6) SALIR
+            ---     ¿Que fecha quiere consultar?     ---
+            (1) Fecha 1: Argentina vs Canada / Peru vs Chile / México vs Jamaica / Ecuador vs Venezuela /
+                         EE.UU vs Bolivia / Uruguay vs Panamá / Brasil vs Costa Rica / Colombia vs Paraguay
+            (2) Fecha 2: Argentina vs Chile / Peru vs Canada / México vs Venezuela / Ecuador vs Jamaica /
+                         EE.UU vs Panamá / Uruguay vs Bolivia / Brasil vs Paraguay / Colombia vs Costa Rica
+            (3) Fecha 3:Argentina vs Peru / Canada vs Chile / México vs Ecuador / Jamaica vs Venezuela /
+                         EE.UU vs Uruguay / Bolivia vs Panamá / Brasil vs Colombia / Costa Rica vs Paraguay
+            (4) Cuartos de Final: 1B vs 2A / 1A vs 2B / 1D vs 2C / 1C vs 2D
+            (5) Semifinal: Ganador (1B vs 2A) vs Ganador (1A vs 2B) / Ganador (1D vs 2C) vs Ganador (1C vs 2D)
+            (6) Final:  Final y 3er Puesto
+            (7) Ir a MENÚ
+            (8) SALIR
             """))
                 if b == 1:
                     print(" ")
