@@ -1,3 +1,7 @@
-import login
+from menu import start_menu
 
-login.ir_login()
+def main():
+    start_menu()
+
+if __name__ == "__main__":
+    main()
