@@ -25,7 +25,6 @@ def ir_nosotros():
     root.title("Byte Busters Travel")
 
 
-
     boton_menu = CTkButton(root, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
                            hover_color=c_morado, corner_radius=12, border_width=2, text="Ir al Menú Principal",
                            height=40,

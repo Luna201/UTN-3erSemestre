@@ -25,6 +25,7 @@ def start_menu():
     label_inicio = tk.Label(ventana, text="#     Bienvenido     #", bd=2, bg=c_azulClaro, fg="black", font=("Verdana", 18))
     label_inicio.pack(pady=20)
 
+
     # Crear botones
     btn1 = CTkButton(ventana, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
                      hover_color=c_morado, corner_radius=12, border_width=2, text="Nosotros", height=40,

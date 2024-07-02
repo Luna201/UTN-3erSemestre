@@ -21,9 +21,8 @@ restoApagar = 0
 pagoFinal = 0
 cuotas = 0
 
-
 def ir_chatbot(ventana_anterior):
-    global step, tema, m2, costo, linea, adelanto, restoApagar, pagoFinal, cuotas
+    global step, tema, m2, costo, linea, adelanto, restoApagar, pagoFinal, cuotas, img
 
     def show_step():
         text_box.config(state=tk.NORMAL)
@@ -54,20 +53,29 @@ Seleccione el tema a consultar:
  (5) Semifinal: Ganador (1B vs 2A) vs Ganador (1A vs 2B) / Ganador (1D vs 2C) vs Ganador (1C vs 2D)
  (6) Final:  Final y 3er Puesto""")
             elif tema == 3:
+                # Mostrar la imagen
+                label.config(image=img)
+                text_box.pack_forget()
+                label.pack()
+
+            elif tema == 4:
                 text_box.insert(tk.END, """
-                       __ Seleccione el tamaño de m2: __
-        (1) 80 m2\n (2) 100 m2\n (3) 120 m2\n (4) Volver a Cotización\n """)
+                                       __ Seleccione el tamaño de m2: __
+                        (1) 80 m2\n (2) 100 m2\n (3) 120 m2\n (4) Volver a Cotización\n """)
+                return
 
         elif step == 3:
             text_box.insert(tk.END, """
                    __ Seleccione la línea que desea: __
         (1) Estándar ($ 299.000 el m2)\n (2) Premium ($ 348.000 el m2)\n (3) Country ($ 420.000 el m2)\n (4) Volver a Cotización\n """)
-        elif step == 6:
+        elif step == 4:
             text_box.insert(tk.END, """
                    -- ¿Qué desea hacer? --
         (1) Realizar otra cotización\n (2) Salir al menú principal\n """)
 
         text_box.config(state=tk.DISABLED)
+        label.pack_forget()
+        text_box.pack(pady=20)
 
     def next_step():
         global step, tema, m2, costo, linea, adelanto, restoApagar, pagoFinal, cuotas
@@ -79,19 +87,19 @@ Seleccione el tema a consultar:
             elif step == 2:
                 if tema == 1:
                     grupo = int(entry.get())
-                    if grupo not in [1, 2, 3, 4]:
+                    if grupo not in [1, 2]:
                         raise ValueError
                 elif tema == 2:
                     m2 = int(entry.get())
-                    if m2 not in [1, 2, 3, 4]:
+                    if m2 not in [1, 2]:
                         raise ValueError
                 elif tema == 3:
                     m2 = int(entry.get())
-                    if m2 not in [1, 2, 3, 4]:
+                    if m2 not in [1, 2]:
                         raise ValueError
             elif step == 3:
                 linea = int(entry.get())
-                if linea not in [1, 2, 3, 4]:
+                if linea not in [1, 2]:
                     raise ValueError
 
             step += 1
@@ -131,12 +139,22 @@ Seleccione el tema a consultar:
     root.title("Cotización de Construcción")
     ventana_anterior.withdraw()
 
-    text_box = tk.Text(root, wrap=tk.WORD, state=tk.DISABLED, height=10, width=100)
-    text_box.pack(pady=20)
+    text_box = tk.Text(root, wrap=tk.WORD, state=tk.DISABLED, height=30, width=150)
+    text_box.pack()
+    text_box.place(relx=0.15, rely=0.1)
+
+    label = tk.Label(root)
+    label.pack_forget()
+
+    try:
+        img = tk.PhotoImage(file="example.png")
+    except Exception as e:
+        messagebox.showerror("Error", f"No se pudo cargar la imagen: {e}")
+        return
 
     entry = tk.Entry(root)
     entry.pack()
-    entry.place(relx=0.44, rely=0.3, relwidth=0.12, relheight=0.05)
+    entry.place(relx=0.4, rely=0.7, relwidth=0.2, relheight=0.05)
 
     frame = tk.Frame(root)
     frame.pack(pady=20)
@@ -153,32 +171,26 @@ Seleccione el tema a consultar:
                            hover_color=c_morado, corner_radius=12, border_width=2, text="Aceptar", height=40,
                            command=next_step)
     btn_accept.pack()
-    btn_accept.place(relx=0.3, rely=0.5, relwidth=0.12, relheight=0.05)
+    btn_accept.place(relx=0.3, rely=0.8, relwidth=0.12, relheight=0.05)
 
     btn_back = CTkButton(root, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
                          hover_color=c_morado, corner_radius=12, border_width=2, text="Regresar", height=40,
                          command=back_step)
     btn_back.pack()
-    btn_back.place(relx=0.44, rely=0.5, relwidth=0.12, relheight=0.05)
+    btn_back.place(relx=0.44, rely=0.8, relwidth=0.12, relheight=0.05)
 
     boton_menu = CTkButton(root, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
                            hover_color=c_morado, corner_radius=12, border_width=2, text="Ir al Menú Principal",
                            height=40,
                            command=volver_al_menu)
     boton_menu.pack()
-    boton_menu.place(relx=0.58, rely=0.5, relwidth=0.12, relheight=0.05)
+    boton_menu.place(relx=0.58, rely=0.8, relwidth=0.12, relheight=0.05)
 
     btn0 = CTkButton(root, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
                      hover_color=c_morado, corner_radius=12, border_width=2, text="Salir", height=40,
                      command=root.quit)
     btn0.pack()
-    btn0.place(relx=0.44, rely=0.7, relwidth=0.12, relheight=0.05)
+    btn0.place(relx=0.44, rely=0.9, relwidth=0.12, relheight=0.05)
 
     show_step()
     root.mainloop()
-
-
-# Llamada de prueba
-ventana_anterior = tk.Tk()  # Crear una ventana de ejemplo para llamar a ir_chatbot
-ventana_anterior.withdraw()  # Ocultar la ventana anterior
-ir_chatbot(ventana_anterior)
