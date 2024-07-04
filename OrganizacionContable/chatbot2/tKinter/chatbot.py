@@ -13,16 +13,13 @@ c_azulOscuro = "#2980B9"
 # Variables globales
 step = 1
 tema = 0
-m2 = 0
-costo = 0
-linea = 0
-adelanto = 0
-restoApagar = 0
-pagoFinal = 0
-cuotas = 0
+grupos = 0
+fechas = 0
+lugar = 0
+
 
 def ir_chatbot(ventana_anterior):
-    global step, tema, m2, costo, linea, adelanto, restoApagar, pagoFinal, cuotas, img
+    global step, tema, grupos, fechas, lugar, cuotas
 
     def show_step():
         text_box.config(state=tk.NORMAL)
@@ -30,81 +27,125 @@ def ir_chatbot(ventana_anterior):
 
         if step == 1:
             text_box.insert(tk.END, """
-            __ Bienvenido a chatbot de Byte Busters Travels __
-Seleccione el tema a consultar:
- (1) Grupos\n (2) Fechas\n (3) Lugar de partidos\n (4) Planes de pago\n """)
+                __ Bienvenido a la sección de Cotización __
+Seleccione el tamaño de la construcción:
+ (1) Grupos\n (2) Fechas\n (3) Lugar de partidos\n """)
 
         elif step == 2:
             if tema == 1:
                 text_box.insert(tk.END, """
             ---     Formación de grupos     ---
- (1) Grupo A: Argentina - Perú - Chile - Canada\n (2) Grupo B: México - Ecuador - Venezuela - Jamaica
- (3) Grupo C: Estados Unidos - Uruguay - Panamá - Bolivia\n (4) Grupo D: Brasil - Colombia - Costa Rica - Paraguay\n""")
+ Grupo A: Argentina - Perú - Chile - Canada\n Grupo B: México - Ecuador - Venezuela - Jamaica
+ Grupo C: Estados Unidos - Uruguay - Panamá - Bolivia\n Grupo D: Brasil - Colombia - Costa Rica - Paraguay
+
+ Presione 0 para Volver\n""")
             elif tema == 2:
                 text_box.insert(tk.END, """
-            ---     ¿Que fecha quiere consultar?     ---
- (1) Fecha 1: Argentina vs Canada / Peru vs Chile / México vs Jamaica / Ecuador vs Venezuela /
-                         EE.UU vs Bolivia / Uruguay vs Panamá / Brasil vs Costa Rica / Colombia vs Paraguay
- (2) Fecha 2: Argentina vs Chile / Peru vs Canada / México vs Venezuela / Ecuador vs Jamaica /
-                         EE.UU vs Panamá / Uruguay vs Bolivia / Brasil vs Paraguay / Colombia vs Costa Rica
- (3) Fecha 3:Argentina vs Peru / Canada vs Chile / México vs Ecuador / Jamaica vs Venezuela /
-                         EE.UU vs Uruguay / Bolivia vs Panamá / Brasil vs Colombia / Costa Rica vs Paraguay
- (4) Cuartos de Final: 1B vs 2A / 1A vs 2B / 1D vs 2C / 1C vs 2D
- (5) Semifinal: Ganador (1B vs 2A) vs Ganador (1A vs 2B) / Ganador (1D vs 2C) vs Ganador (1C vs 2D)
- (6) Final:  Final y 3er Puesto""")
-            elif tema == 3:
-                # Mostrar la imagen
-                label.config(image=img)
-                text_box.pack_forget()
-                label.pack()
+            ---     ¿Qué fecha quiere consultar?     ---
+ Fecha 1: Argentina vs Canada / Peru vs Chile / México vs Jamaica / Ecuador vs Venezuela /
+          EE.UU vs Bolivia / Uruguay vs Panamá / Brasil vs Costa Rica / Colombia vs Paraguay
+ Fecha 2: Argentina vs Chile / Peru vs Canada / México vs Venezuela / Ecuador vs Jamaica /
+          EE.UU vs Panamá / Uruguay vs Bolivia / Brasil vs Paraguay / Colombia vs Costa Rica
+ Fecha 3: Argentina vs Peru / Canada vs Chile / México vs Ecuador / Jamaica vs Venezuela /
+          EE.UU vs Uruguay / Bolivia vs Panamá / Brasil vs Colombia / Costa Rica vs Paraguay
+ Cuartos de Final: 1ro grupo B vs 2do grupo A / 1ro grupo A vs 2do grupo B / 1ro grupo D vs 2do grupo C / 1ro grupo C vs 2do grupo D
+ Semifinal: Ganador (1B vs 2A) vs Ganador (1A vs 2B) / Ganador (1D vs 2C) vs Ganador (1C vs 2D)
+ Final: Final y 3er Puesto
 
-            elif tema == 4:
+ Presione 0 para Volver""")
+            elif tema == 3:
                 text_box.insert(tk.END, """
-                                       __ Seleccione el tamaño de m2: __
-                        (1) 80 m2\n (2) 100 m2\n (3) 120 m2\n (4) Volver a Cotización\n """)
-                return
+           __ Lugar a jugar: __
+ (1) Fase de grupos\n (2) Cuartos de final\n (3) Semifinales\n (4) 3er Puesto y Final\n (0) Volver\n""")
 
         elif step == 3:
-            text_box.insert(tk.END, """
-                   __ Seleccione la línea que desea: __
-        (1) Estándar ($ 299.000 el m2)\n (2) Premium ($ 348.000 el m2)\n (3) Country ($ 420.000 el m2)\n (4) Volver a Cotización\n """)
-        elif step == 4:
-            text_box.insert(tk.END, """
-                   -- ¿Qué desea hacer? --
-        (1) Realizar otra cotización\n (2) Salir al menú principal\n """)
+            if lugar == 1:
+                text_box.insert(tk.END, """
+Costa Este      East Rutherford, NJ: Argentina vs Chile (25/06) // Uruguay vs Bolivia (27/06)
+                Miami, FL: Uruguay vs Panama (23/06) // Argentina vs Peru (29/06)
+                Orlando, FL: Canada vs Chile (29/06) // Bolivia vs Panama (01/07)
+                Atlanta, GA: Argentina vs Canada (20/06) // Panama vs USA (27/06)
+
+Centro          Kansas City, MO: Uruguay vs USA (01/07)
+                Kansas City, KS: Peru vs Canada (25/06)
+                Arlington, TX: Peru vs Chile (21/06) // Bolivia vs USA (23/06)
+                Houston, TX: Mexico vs Jamaica (22/06) // Colombia vs Paraguay (24/06)
+                Austin, TX: Venezuela vs Jamaica (30/06) // Costa Rica vs Paraguay (02/07)
+
+Costa Oeste     Glendale, AZ: Colombia vs Costa Rica (24/06) // Mexico vs Ecuador (30/06)
+                Las Vegas, NV: Ecuador vs Jamaica (26/06) // Paraguay vs Brasil (24/06)
+                Inglewood, CA: Brasil vs Costa Rica (24/06) // Mexico vs Venezuela (26/06)
+                Santa Clara, CA: Venezuela vs Ecuador (30/06) // Brasil vs Colombia (02/07)
+
+Presione 0 para Volver""")
+            elif lugar == 2:
+                text_box.insert(tk.END, """
+Centro         Arlington, TX: 1ro grupo B vs 2do grupo A (05/07)  
+               Houston, TX: 1ro grupo A vs 2do grupo B (04/07)  
+
+Costa Oeste    Glendale, AZ: 1ro grupo D vs 2do grupo C (06/07) 
+               Las Vegas, NV: 1ro grupo C vs 2do grupo D (06/07)
+
+Presione 0 para Volver""")
+            elif lugar == 3:
+                text_box.insert(tk.END, """
+Costa Este     East Rutherford, NJ: Ganador (1B vs 2A) vs Ganador (1A vs 2B) (09/07)
+               Charlotte, GA: Ganador (1D vs 2C) vs Ganador (1C vs 2D) (10/07)
+
+Presione 0 para Volver""")
+            elif lugar == 4:
+                text_box.insert(tk.END, """
+Costa Este      Charlotte, GA: 3er Lugar (13/07) 
+                Miami, FL: FINAL (14/07)
+
+Presione 0 para Volver""")
 
         text_box.config(state=tk.DISABLED)
-        label.pack_forget()
-        text_box.pack(pady=20)
+        entry.delete(0, tk.END)
 
     def next_step():
-        global step, tema, m2, costo, linea, adelanto, restoApagar, pagoFinal, cuotas
+        global step, tema, grupos, fechas, lugar, cuotas
         try:
+            if entry.get() == "0":
+                back_step()
+                return
             if step == 1:
                 tema = int(entry.get())
-                if tema not in [1, 2, 3, 4]:
+                if tema not in [1, 2, 3]:
                     raise ValueError
             elif step == 2:
                 if tema == 1:
-                    grupo = int(entry.get())
-                    if grupo not in [1, 2]:
+                    grupos = int(entry.get())
+                    if grupos not in [0]:
                         raise ValueError
                 elif tema == 2:
-                    m2 = int(entry.get())
-                    if m2 not in [1, 2]:
+                    fechas = int(entry.get())
+                    if fechas not in [0]:
                         raise ValueError
                 elif tema == 3:
-                    m2 = int(entry.get())
-                    if m2 not in [1, 2]:
+                    lugar = int(entry.get())
+                    if lugar not in [1, 2, 3, 4]:
                         raise ValueError
             elif step == 3:
-                linea = int(entry.get())
-                if linea not in [1, 2]:
-                    raise ValueError
+                if lugar == 1:
+                    enter = int(entry.get())
+                    if enter not in [0]:
+                        raise ValueError
+                if lugar == 2:
+                    enter = int(entry.get())
+                    if enter not in [0]:
+                        raise ValueError
+                if lugar == 3:
+                    enter = int(entry.get())
+                    if enter not in [0]:
+                        raise ValueError
+                if lugar == 4:
+                    enter = int(entry.get())
+                    if enter not in [0]:
+                        raise ValueError
 
             step += 1
             show_step()
-            entry.delete(0, tk.END)
         except ValueError:
             messagebox.showerror("Error", "Elige una opción válida.")
 
@@ -113,23 +154,6 @@ Seleccione el tema a consultar:
         if step > 1:
             step -= 1
             show_step()
-            entry.delete(0, tk.END)
-        else:
-            reiniciar()
-
-    def reiniciar():
-        global step, tema, m2, costo, linea, adelanto, restoApagar, pagoFinal, cuotas
-        step = 1
-        tema = 0
-        m2 = 0
-        costo = 0
-        linea = 0
-        adelanto = 0
-        restoApagar = 0
-        pagoFinal = 0
-        cuotas = 0
-        show_step()
-        entry.delete(0, tk.END)
 
     def volver_al_menu():
         root.destroy()
@@ -140,21 +164,10 @@ Seleccione el tema a consultar:
     ventana_anterior.withdraw()
 
     text_box = tk.Text(root, wrap=tk.WORD, state=tk.DISABLED, height=30, width=150)
-    text_box.pack()
-    text_box.place(relx=0.15, rely=0.1)
-
-    label = tk.Label(root)
-    label.pack_forget()
-
-    try:
-        img = tk.PhotoImage(file="example.png")
-    except Exception as e:
-        messagebox.showerror("Error", f"No se pudo cargar la imagen: {e}")
-        return
+    text_box.pack(pady=20)
 
     entry = tk.Entry(root)
-    entry.pack()
-    entry.place(relx=0.4, rely=0.7, relwidth=0.2, relheight=0.05)
+    entry.pack(pady=10)
 
     frame = tk.Frame(root)
     frame.pack(pady=20)
@@ -194,3 +207,31 @@ Seleccione el tema a consultar:
 
     show_step()
     root.mainloop()
+
+
+def iniciar_app():
+    root = tk.Tk()
+    root.title("Menú Principal")
+
+    ancho_root = root.winfo_screenwidth()
+    altura_root = root.winfo_screenheight()
+    ancho_root = int(ancho_root)
+    altura_root = int(altura_root)
+    root.geometry(f"{ancho_root}x{altura_root}")
+    root.config(bg=c_azulClaro)
+
+    btn_start = CTkButton(root, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
+                          hover_color=c_morado, corner_radius=12, border_width=2, text="Iniciar Cotización", height=40,
+                          command=lambda: ir_chatbot(root))
+    btn_start.pack(pady=20)
+
+    btn_exit = CTkButton(root, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
+                         hover_color=c_morado, corner_radius=12, border_width=2, text="Salir", height=40,
+                         command=root.quit)
+    btn_exit.pack(pady=20)
+
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    iniciar_app()
