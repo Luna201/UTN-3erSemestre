@@ -27,36 +27,49 @@ def ir_chatbot(ventana_anterior):
 
         if step == 1:
             text_box.insert(tk.END, """
-                __ Bienvenido a la sección de Cotización __
-Seleccione el tamaño de la construcción:
- (1) Grupos\n (2) Fechas\n (3) Lugar de partidos\n """)
+                __ Bienvenido a la sección de Consultas __\n
+Seleccione lo que desea consultar:\n
+ (1) Grupos\n (2) Fechas\n (3) Lugar de partidos\n (4) Historial de Campeones\n (5) Comunicación\n""")
 
         elif step == 2:
             if tema == 1:
                 text_box.insert(tk.END, """
-            ---     Formación de grupos     ---
- Grupo A: Argentina - Perú - Chile - Canada\n Grupo B: México - Ecuador - Venezuela - Jamaica
- Grupo C: Estados Unidos - Uruguay - Panamá - Bolivia\n Grupo D: Brasil - Colombia - Costa Rica - Paraguay
+            ---     Formación de grupos     ---\n
+ Grupo A: Argentina - Perú - Chile - Canada\n Grupo B: México - Ecuador - Venezuela - Jamaica\n
+ Grupo C: Estados Unidos - Uruguay - Panamá - Bolivia\n Grupo D: Brasil - Colombia - Costa Rica - Paraguay\n
 
  Presione 0 para Volver\n""")
             elif tema == 2:
                 text_box.insert(tk.END, """
-            ---     ¿Qué fecha quiere consultar?     ---
+            ---     ¿Qué fecha quiere consultar?     ---\n
  Fecha 1: Argentina vs Canada / Peru vs Chile / México vs Jamaica / Ecuador vs Venezuela /
-          EE.UU vs Bolivia / Uruguay vs Panamá / Brasil vs Costa Rica / Colombia vs Paraguay
+          EE.UU vs Bolivia / Uruguay vs Panamá / Brasil vs Costa Rica / Colombia vs Paraguay\n
  Fecha 2: Argentina vs Chile / Peru vs Canada / México vs Venezuela / Ecuador vs Jamaica /
-          EE.UU vs Panamá / Uruguay vs Bolivia / Brasil vs Paraguay / Colombia vs Costa Rica
+          EE.UU vs Panamá / Uruguay vs Bolivia / Brasil vs Paraguay / Colombia vs Costa Rica\n
  Fecha 3: Argentina vs Peru / Canada vs Chile / México vs Ecuador / Jamaica vs Venezuela /
-          EE.UU vs Uruguay / Bolivia vs Panamá / Brasil vs Colombia / Costa Rica vs Paraguay
- Cuartos de Final: 1ro grupo B vs 2do grupo A / 1ro grupo A vs 2do grupo B / 1ro grupo D vs 2do grupo C / 1ro grupo C vs 2do grupo D
- Semifinal: Ganador (1B vs 2A) vs Ganador (1A vs 2B) / Ganador (1D vs 2C) vs Ganador (1C vs 2D)
- Final: Final y 3er Puesto
+          EE.UU vs Uruguay / Bolivia vs Panamá / Brasil vs Colombia / Costa Rica vs Paraguay\n
+ Cuartos de Final: 1ro grupo B vs 2do grupo A / 1ro grupo A vs 2do grupo B / 1ro grupo D vs 2do grupo C / 1ro grupo C vs 2do grupo D\n
+ Semifinal: Ganador (1B vs 2A) vs Ganador (1A vs 2B) / Ganador (1D vs 2C) vs Ganador (1C vs 2D)\n
+ Final: Final y 3er Puesto\n
 
  Presione 0 para Volver""")
             elif tema == 3:
                 text_box.insert(tk.END, """
-           __ Lugar a jugar: __
+           __ Lugar a jugar: __\n
  (1) Fase de grupos\n (2) Cuartos de final\n (3) Semifinales\n (4) 3er Puesto y Final\n (0) Volver\n""")
+
+            elif tema == 4:
+                text_box.insert(tk.END, """
+            Los campeones de la Copa America desde 2 de julio de 1916, fecha en que se inauguro el torneo, hasta la fecha.\n
+ # Uruguay= 15\n # Argentina= 15\n # Brasil= 9\n # Chile= 2\n # Paraguay= 2
+ # Peru= 2\n # Colombia = 1\n # Bolivia= 1\n
+
+ Presione 0 para Volver""")
+            elif tema == 5:
+                text_box.insert(tk.END, """
+            Ingrese su Nombre completo, correo y número de teléfono\n
+
+ Presione 0 para Volver""")
 
         elif step == 3:
             if lugar == 1:
@@ -111,7 +124,7 @@ Presione 0 para Volver""")
                 return
             if step == 1:
                 tema = int(entry.get())
-                if tema not in [1, 2, 3]:
+                if tema not in [1, 2, 3, 4]:
                     raise ValueError
             elif step == 2:
                 if tema == 1:
@@ -124,7 +137,11 @@ Presione 0 para Volver""")
                         raise ValueError
                 elif tema == 3:
                     lugar = int(entry.get())
-                    if lugar not in [1, 2, 3, 4]:
+                    if lugar not in [0, 1, 2, 3, 4]:
+                        raise ValueError
+                elif tema == 4:
+                    historia = int(entry.get())
+                    if historia not in [0]:
                         raise ValueError
             elif step == 3:
                 if lugar == 1:
@@ -160,14 +177,16 @@ Presione 0 para Volver""")
         ventana_anterior.deiconify()
 
     root = tk.Tk()
-    root.title("Cotización de Construcción")
+    root.title("Consultas")
     ventana_anterior.withdraw()
 
     text_box = tk.Text(root, wrap=tk.WORD, state=tk.DISABLED, height=30, width=150)
     text_box.pack(pady=20)
+    text_box.config(font=("Arial", 12), bd=5)
 
-    entry = tk.Entry(root)
-    entry.pack(pady=10)
+    entry = tk.Entry(root, width=50)  # Aumentar el ancho del cuadro de entrada
+    entry.pack(pady=30)
+    entry.config(font=("Arial", 14), bd=5)
 
     frame = tk.Frame(root)
     frame.pack(pady=20)
@@ -208,30 +227,3 @@ Presione 0 para Volver""")
     show_step()
     root.mainloop()
 
-
-def iniciar_app():
-    root = tk.Tk()
-    root.title("Menú Principal")
-
-    ancho_root = root.winfo_screenwidth()
-    altura_root = root.winfo_screenheight()
-    ancho_root = int(ancho_root)
-    altura_root = int(altura_root)
-    root.geometry(f"{ancho_root}x{altura_root}")
-    root.config(bg=c_azulClaro)
-
-    btn_start = CTkButton(root, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
-                          hover_color=c_morado, corner_radius=12, border_width=2, text="Iniciar Cotización", height=40,
-                          command=lambda: ir_chatbot(root))
-    btn_start.pack(pady=20)
-
-    btn_exit = CTkButton(root, font=("sans serif", 13), border_color=c_negro, fg_color=c_azulOscuro,
-                         hover_color=c_morado, corner_radius=12, border_width=2, text="Salir", height=40,
-                         command=root.quit)
-    btn_exit.pack(pady=20)
-
-    root.mainloop()
-
-
-if __name__ == "__main__":
-    iniciar_app()
