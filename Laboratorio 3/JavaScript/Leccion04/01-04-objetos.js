@@ -51,7 +51,7 @@ for(propiedad in persona){
     console.log(persona[propiedad]);
 }
 
-//agregar y eliminar propieades de un objeto
+//agregar y eliminar propiedades de un objeto
 console.log('cambiamos y eliminamos un error')
 persona.apellidos= 'Betancud';   //cambiamos dinamicamente el valor de un objeto. NO equivocarse de nombre de propiedad porque se crearia una nueva
 delete persona.apellidos;       //Eliminamos el objeto

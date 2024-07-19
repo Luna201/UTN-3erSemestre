@@ -1,0 +1,48 @@
+Lección 1- Ciclos:
+- Ciclo while.
+- Ciclo do While.
+- Ciclo for.
+- Break.
+- Continue.
+- Labels.
+- Video Proyecto BOMBA.
+
+
+Lección 2- Arrays o Arreglos:
+- Creación de arrays.
+- Recorrer los elementos de un arreglo.
+- Modificamos los elementos del arreglo.
+- Agregamos nuevos valores al arreglo (3 Formas).
+- Como preguntar si es un Array.
+
+
+Lección 3- Funciones:
+- Definición de función.
+- Palabra Return.
+- Funciones de tipo expresión.
+- Funciones de tipo self y invoking.
+- Tipos de datos en una función.
+- Funciones flecha.
+- Argumentos y Parametros.
+- Concepto hoisting.
+- Paso por valor.
+- Paso por referencia.
+
+
+Lección 4- Objetos:
+- Introducción a los Objetos de JS.
+- Agregamos métodos a los objetos.
+- Diferentes formas de crar un Ojeto.
+- Cómo acceder a las propiedades de los Objetos.
+- Agregar y eliminar propiedades de los Objetos.
+- Ejecutamos desde el navegador.
+- Distintas formas de imprimir un Objeto con: Object.values()  y JSON.stringify().
+- Métodos Getter (obtener) y Setter (establecer/modificar).
+- Constructores de objetos.
+- Agregar métodos al constructor del objeto.
+- Distintas formas de crear objetos.
+- El uso de prototype.
+- El uso de call.
+- El uso de apply.
+
+Lección 5- Objetos 2:
