@@ -49,3 +49,5 @@ Lección 5- Objetos 2:
 - Metodo Get y Set (Ej: se crea el método get y set para el atributo de apellido, luego 
 se modifica el apellido a través del  set y mostrar con un console.log lo que es el get 
 donde muestra el resultado obtenido.)
+- Hoisting y clases
+- Herencia
