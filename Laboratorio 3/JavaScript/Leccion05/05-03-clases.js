@@ -21,6 +21,10 @@ class Persona{  //Clase padre
         this._apellido= apellido;
     }
 
+    nombreCompleto(){
+        return this._nombre+' '+this._apellido;
+    }
+
 }
 
 class Empleado extends Persona{     //Clase hija
@@ -35,6 +39,12 @@ class Empleado extends Persona{     //Clase hija
     set departamento(departamento){
         this._departamento= departamento;
     }
+    //sobreescritura
+    nombreCompleto(){       //Debe ser el mismo nombre y parametro para ser una sobreescritura
+        //return this._nombre+' '+this._apellido+', '+this._departamento; O TAMBIEN
+        return super.nombreCompleto()+', '+this._departamento;
+    }
+
 }
 
 let persona1 = new Persona('Martin', 'Perez');
@@ -54,5 +64,6 @@ console.log(persona2)
 
 let empleado1= new Empleado('Maria', ' Gimenez', 'Sistemas');
 console.log(empleado1);
-console.log(empleado1.nombre)
+console.log(empleado1.nombreCompleto());        //herencia de metodo para acceder a la clase padre
+
 
