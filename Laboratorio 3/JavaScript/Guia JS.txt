@@ -51,3 +51,5 @@ se modifica el apellido a través del  set y mostrar con un console.log lo que e
 donde muestra el resultado obtenido.)
 - Hoisting y clases
 - Herencia
+- Herencia de metodos
+-Sobreescritura
