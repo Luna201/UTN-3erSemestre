@@ -52,4 +52,5 @@ donde muestra el resultado obtenido.)
 - Hoisting y clases
 - Herencia
 - Herencia de metodos
--Sobreescritura
+- Sobreescritura
+- Clase Object, toString, sobreescritura y Polimorfismo

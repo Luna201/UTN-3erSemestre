@@ -25,6 +25,11 @@ class Persona{  //Clase padre
         return this._nombre+' '+this._apellido;
     }
 
+    toString(){     //Regresa un String. Sobreescribe el método de la clase padre (object)
+        //Se aplica el polimorfismo (Multiples formas en tiempo de ejecución)
+        //El método que se ejecuta depende si es una referencia de la clase padre o hija
+        return this.nombreCompleto();
+    }
 }
 
 class Empleado extends Persona{     //Clase hija
@@ -44,7 +49,6 @@ class Empleado extends Persona{     //Clase hija
         //return this._nombre+' '+this._apellido+', '+this._departamento; O TAMBIEN
         return super.nombreCompleto()+', '+this._departamento;
     }
-
 }
 
 let persona1 = new Persona('Martin', 'Perez');
@@ -66,4 +70,6 @@ let empleado1= new Empleado('Maria', ' Gimenez', 'Sistemas');
 console.log(empleado1);
 console.log(empleado1.nombreCompleto());        //herencia de metodo para acceder a la clase padre
 
-
+//Object.prototype.toString    :La clase Object permite trabajar con atributos y métodos como toString   
+console.log(empleado1.toString());      //ejecuta el método de la clase hija
+console.log(persona1.toString());       //ejecuta el método de la clase padre
