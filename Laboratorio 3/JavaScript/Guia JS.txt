@@ -57,3 +57,5 @@ donde muestra el resultado obtenido.)
 - Palabra static con métodos
 - Atributos estáticos
 - Atributos estáticos vs no estáticos
+-Uso de la palabra static.
+- Creación de constantes estáticas
