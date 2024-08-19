@@ -54,3 +54,6 @@ donde muestra el resultado obtenido.)
 - Herencia de metodos
 - Sobreescritura
 - Clase Object, toString, sobreescritura y Polimorfismo
+- Palabra static con métodos
+- Atributos estáticos
+- Atributos estáticos vs no estáticos
