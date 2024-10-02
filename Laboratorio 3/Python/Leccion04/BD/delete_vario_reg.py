@@ -5,11 +5,12 @@ conexion = psycopg2.connect(
 try:
     with conexion:
         with conexion.cursor() as cursor:
-            sentencia = 'UPDATE persona SET NOMBRE= %s, apellido=%s, email=%s WHERE id_persona= %s '
-            valores = ('Juan Carlos', 'Roldan', 'rcarlos@gmail.com', 1)    #es una tupla
+            sentencia = 'DELETE FROM persona WHERE id_persona IN %s'
+            entrada= input('Digite el número de registros a eliminar: ')
+            valores= (tuple(entrada.split(',')),)   #Tupla de tuplas
             cursor.execute(sentencia, valores)
-            registros_actualizados = cursor.rowcount
-            print(f'Los registros insertados son: {registros_actualizados}')
+            registros_eliminados = cursor.rowcount
+            print(f'Los registros eliminados son: {registros_eliminados}')
 
 except Exception as e:
     print(f'Ocurrio un error: {e}')
