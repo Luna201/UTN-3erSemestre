@@ -10,3 +10,22 @@ Bloques else y finally al manejar excepciones y Creación de clases de Exception
 #Archivos
     -Leccion02
         .manejo de archivos
+
+#Lección 4: 
+
+CLASE 9-a
+- Uso de with y psycopg2
+- Función fetchone en psycopg2
+- Función fechall en psycopg2 Parte 1 y 2
+- Insertar un registro con psycopg2
+- Insertar varios registros
+- Actualizar o modificar un registro
+- Actualizar o modificar varios registros
+- Eliminar un registro
+- Eliminar varios registros
+
+
+CLASE 9.B
+- Corrección de mensajes de error en Postgres: Parte 1 y 2
+- Manejo de transacciones (Manualmente): Parte 1, 2, 3 y 4
+- Manejo de tran
