@@ -7,11 +7,13 @@ Bloques else y finally al manejar excepciones y Creación de clases de Exception
 
 # Leccion09
 
+
 #Archivos
     -Leccion02
         .manejo de archivos
 
-#Lección 4: 
+
+# Lección 04: 
 
 CLASE 9-a
 - Uso de with y psycopg2
@@ -24,8 +26,14 @@ CLASE 9-a
 - Eliminar un registro
 - Eliminar varios registros
 
-
 CLASE 9.B
 - Corrección de mensajes de error en Postgres: Parte 1 y 2
 - Manejo de transacciones (Manualmente): Parte 1, 2, 3 y 4
-- Manejo de tran
+- Manejo de transacciones con with (Automáticamente)
+
+
+#LECCION 07
+Guia clase 10A
+- Explicación con el diagrama de clase UML (Tarea: hacer el diagrama UML)
+- Manejo de logging: Parte 1
+- Manejo de logging: Parte 2

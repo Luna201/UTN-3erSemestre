@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>0</y>
+      <w>210</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Persona&gt;&gt;
+--
+_idPersona:number
+_nombre:String
+_apellido:String
+_edad:number
+_contadorPersonas_
+--
+getidPersona():number
+getNombre():string
+setNombre(string)
+getApellido():string
+setApellido(string)
+getEdad():number
+setEdad(string)
+toString()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>430</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Empleado&gt;&gt;
+--
+_idEmpleado:Long
+_sueldo:number
+--
+getidEmpleado():number
+getSueldo():number
+setSueldo(number)
+toString()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>430</y>
+      <w>210</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Cliente&gt;&gt;
+--
+_idCliente:number
+_fechaRegistro:Data
+--
+getidCliente
+getFechaRegistro():Date
+setFechaRegistro(Date)
+toString()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>90</x>
+      <y>320</y>
+      <w>170</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Extends&gt;&gt;</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>320</y>
+      <w>170</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;110.0</additional_attributes>
+  </element>
+</diagram>

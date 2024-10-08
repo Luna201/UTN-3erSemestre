@@ -1,4 +1,4 @@
-Lección 4: 
+# Lección 04: 
 
 CLASE 9-a
 - Uso de with y psycopg2
