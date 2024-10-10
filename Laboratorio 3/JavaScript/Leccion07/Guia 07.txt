@@ -1,0 +1,10 @@
+Leccion 07-Herencia:
+ CLASE 09
+- Introducción a lo que es la herencia en JavaScript
+- Creación de la Clase Persona
+- Creación de la Clase Empleado
+- Creación de la Clase Cliente
+- Cargando todo en una sola plantilla
+- Prueba Clase Persona
+- Prueba Clase Empleado
+- Prueba Clase Cliente
