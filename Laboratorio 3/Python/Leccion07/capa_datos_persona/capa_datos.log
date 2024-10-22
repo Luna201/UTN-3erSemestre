@@ -8,3 +8,8 @@
 08:52:16 PM: WARNING [logger_base.py: 18] Mensaje a nivel warning
 08:52:16 PM: ERROR [logger_base.py: 19] Mensaje a nivel error
 08:52:16 PM: CRITICAL [logger_base.py: 20] Mensaje a nivel critical
+11:44:18 PM: DEBUG [logger_base.py: 16] Mensaje a nivel debug
+11:44:18 PM: INFO [logger_base.py: 17] Mensaje a nivel info
+11:44:18 PM: WARNING [logger_base.py: 18] Mensaje a nivel warning
+11:44:18 PM: ERROR [logger_base.py: 19] Mensaje a nivel error
+11:44:18 PM: CRITICAL [logger_base.py: 20] Mensaje a nivel critical
