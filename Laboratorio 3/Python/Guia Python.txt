@@ -37,3 +37,9 @@ Guia clase 10A
 - Explicación con el diagrama de clase UML (Tarea: hacer el diagrama UML)
 - Manejo de logging: Parte 1
 - Manejo de logging: Parte 2
+
+Guia clase 10 B
+- Creación de la Clase Persona
+- Prueba de la Clase Persona
+- Creación de la Clase Conexion: Parte 1, 2 y 3
+- Comienzo de la creación de la Clase PersonaDAO

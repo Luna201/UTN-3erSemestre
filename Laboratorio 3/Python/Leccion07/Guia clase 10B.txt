@@ -1,0 +1,5 @@
+Guia clase 10 B
+- Creación de la Clase Persona
+- Prueba de la Clase Persona
+- Creación de la Clase Conexion: Parte 1, 2 y 3
+- Comienzo de la creación de la Clase PersonaDAO
