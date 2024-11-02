@@ -437,3 +437,26 @@
 10:20:30 PM: DEBUG [conexion.py: 34] Se abrió correctamente el cursor: <cursor object at 0x000001F4C101E7A0; closed: 0>
 10:23:21 PM: DEBUG [conexion.py: 22] Conexión exitosa: <connection object at 0x000002BE168C28A0; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
 10:23:21 PM: DEBUG [conexion.py: 34] Se abrió correctamente el cursor: <cursor object at 0x000002BE168DE7A0; closed: 0>
+08:39:30 PM: DEBUG [conexion.py: 22] Conexión exitosa: <connection object at 0x000001E8783D8E10; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
+08:39:30 PM: DEBUG [conexion.py: 34] Se abrió correctamente el cursor: <cursor object at 0x000001E876643AE0; closed: 0>
+08:39:39 PM: DEBUG [conexion.py: 22] Conexión exitosa: <connection object at 0x00000231150F28A0; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
+08:39:39 PM: DEBUG [conexion.py: 34] Se abrió correctamente el cursor: <cursor object at 0x000002311510E7A0; closed: 0>
+08:40:44 PM: DEBUG [conexion.py: 22] Conexión exitosa: <connection object at 0x000001F8555928A0; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
+08:40:44 PM: DEBUG [conexion.py: 34] Se abrió correctamente el cursor: <cursor object at 0x000001F8555AE7A0; closed: 0>
+08:45:00 PM: DEBUG [Persona.py: 55] 
+            Id Persona: 1,
+            Nombre: Juan,
+            Apellido: Perez,
+            Email: jperez@mail.com
+08:45:00 PM: DEBUG [Persona.py: 57] 
+            Id Persona: None,
+            Nombre: Jose,
+            Apellido: Lepez,
+            Email: jlepez@mail.com
+08:45:00 PM: DEBUG [Persona.py: 59] 
+            Id Persona: 1,
+            Nombre: None,
+            Apellido: None,
+            Email: None
+08:46:11 PM: DEBUG [conexion.py: 22] Conexión exitosa: <connection object at 0x0000015E8B4928A0; dsn: 'user=postgres password=xxx dbname=test_bd host=127.0.0.1 port=5432', closed: 0>
+08:46:11 PM: DEBUG [conexion.py: 34] Se abrió correctamente el cursor: <cursor object at 0x0000015E8B4AE7A0; closed: 0>
