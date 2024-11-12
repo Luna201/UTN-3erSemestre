@@ -19,35 +19,35 @@ class Persona:
 
     @property
     def id_persona(self):
-        return self.id_persona
+        return self._id_persona
 
     @id_persona.setter
     def id_persona(self, id_persona):
         self._id_persona = id_persona
 
     @property
-    def id_nombre(self):
-        return self.id_nombre
+    def nombre(self):
+        return self._nombre
 
-    @id_nombre.setter
-    def id_nombre(self, id_nombre):
-        self._id_nombre = id_nombre
-
-    @property
-    def id_apellido(self):
-        return self.id_apellido
-
-    @id_apellido.setter
-    def id_apellido(self, id_apellido):
-        self.id_apellido = id_apellido
+    @nombre.setter
+    def nombre(self, nombre):
+        self._nombre = nombre
 
     @property
-    def id_email(self):
-        return self.id_email
+    def apellido(self):
+        return self._apellido
 
-    @id_email.setter
-    def id_email(self, id_email):
-        self.id_email = id_email
+    @apellido.setter
+    def apellido(self, apellido):
+        self._apellido = apellido
+
+    @property
+    def email(self):
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        self._email = email
 
 
 if __name__ == '__main__':
